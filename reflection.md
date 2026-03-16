@@ -39,7 +39,7 @@ An AI suggestion that was incorrect was when trying to fix the attempts bug. I w
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
-. The secret number kept changing because it was being reassigned a new value after every guess, instead of being initiaized to one value at the start. 
+. The secret number kept changing because it was being reassigned a new value after every guess, instead of being initiaized to one value at the beggining of the game. 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 "Reruns" happen eveyr time a user interacts with the app and reruns the code from top to bottom. Session state is a feature that allows variables to keep their state accross all reruns. 
 - What change did you make that finally gave the game a stable secret number?
