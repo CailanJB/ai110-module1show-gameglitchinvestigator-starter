@@ -26,13 +26,21 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+[ ] The purpose of the game is to provide a guessing game for numbers 1-100, 1-20, or 1-50 based on the difficulty and geuessing the correct number in the given range.
 - [ ] Detail which bugs you found.
+4 bugs were found. The hints were not working as intended. For guesses that were signifcantly less than the secret number a hint of go lower was given and guesses that were significantly greater than the secret number a hint of go higher was given. The attempts for each diffculty were off by 1 when the game started. The game doesnt restart after clcking new game. The secret number kept changing after every guess.
 - [ ] Explain what fixes you applied.
+[ ] For the hints I changed the order for the statements in the if conditions. For the attempts I changed the attempts at the start of the game from 1 to 0. For the new game I made sure to reste the st.session_state.statsu to playing whenever the new game button was clicked to indicate a new game has started. 
+For the scret number instead of converting it to a strign for even attempts and int for odd attempts just assinging it as an integer to rmeove type inconsistenices. 
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [ ] 
+[ ] ![alt text](image-1.png)
 
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
+
+
+[
