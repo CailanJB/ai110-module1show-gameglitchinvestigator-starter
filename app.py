@@ -40,7 +40,8 @@ if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    #FIX: fixed attempts logic starting at 1 attempt giving user less turns using copilot ask mode. 
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
     st.session_state.score = 0
@@ -80,7 +81,10 @@ with col3:
 
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    st.session_state.secret = random.randint(low, high)
+    st.session_state.status = "playing"
+    st.session_state.history = []
+    st.session_state.score = 0
     st.success("New game started.")
     st.rerun()
 
@@ -101,7 +105,7 @@ if submit:
         st.error(err)
     else:
         st.session_state.history.append(guess_int)
-        #FIX: Fix logic for secret number changing after every guess
+        #FIX: Fix logic for secret number changing after every guess with copilot agentic mode
         secret = st.session_state.secret
 
         outcome, message = check_guess(guess_int, secret)
